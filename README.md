@@ -1,4 +1,4 @@
-scala_stomp
+STOMPS
 ===========
 
 A Scala implementation of STOMP
