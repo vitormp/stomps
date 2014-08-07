@@ -1,4 +1,7 @@
-name := "scala_stomp"
+name := "stomps"
 
 version := "1.0"
-    
+
+scalaVersion := "2.11.2"
+
+
