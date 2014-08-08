@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/stomps.iml" filepath="$PROJECT_DIR$/stomps.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/stomps-build.iml" filepath="$PROJECT_DIR$/.idea/modules/stomps-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/default-78a0f1.iml" filepath="$PROJECT_DIR$/.idea/modules/default-78a0f1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/default-78a0f1-build.iml" filepath="$PROJECT_DIR$/.idea/modules/default-78a0f1-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/main.iml" filepath="$PROJECT_DIR$/src/main/main.iml" />
     </modules>
   </component>
 </project>
