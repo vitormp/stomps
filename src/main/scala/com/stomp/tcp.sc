@@ -10,7 +10,7 @@ client.getInetAddress().getHostName()
 
 val sender = new PrintStream(client.getOutputStream())
 
-sender.println("CONNECT\n\n\n\\@")
+sender.println("CONNECT\nlogin:guest\npassword:guest\n\n\n\\@")
 
 
 
