@@ -12,3 +12,7 @@ class STOMPMessage {
 class Connect extends STOMPMessage {
   val command = "CONNECT"
 }
+
+class Send extends STOMPMessage {
+  val command = "SEND"
+}
