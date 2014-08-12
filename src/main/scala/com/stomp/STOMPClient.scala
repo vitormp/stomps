@@ -8,11 +8,11 @@ import com.stomp.message.STOMPMessage
 /**
  * Created by vmp on 8/8/14.
  */
-class STOMPClient(host : String, port : Integer) {
+class STOMPClient(serverHost : String, serverPort : Integer) {
 
   def send(message : STOMPMessage) = {
-    val server = new Socket(host, port)
+    val server = new Socket(serverHost, serverPort)
     val client = new PrintWriter(server.getOutputStream())
-    client.println()
+    client.println(message.command + message.endOfMessage)
   }
 }
