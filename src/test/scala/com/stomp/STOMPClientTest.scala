@@ -20,4 +20,8 @@ class STOMPClientTest extends UnitSpec {
   "A Client" should "connect to message broker when calling the connect method specifying the host" in {
     new STOMPClient("127.0.0.1").connect();
   }
+
+  "A Client" should "connect to message broker when calling the connect method specifying the host and the port" in {
+    new STOMPClient("127.0.0.1", 61613).connect();
+  }
 }
