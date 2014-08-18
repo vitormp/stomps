@@ -29,6 +29,6 @@ class STOMPClientTest extends UnitSpec {
     val sendMessage : Send = Send("Message body")()
     val client = new STOMPClient()
 //    client.connect()
-    client.send(sendMessage)
+//    client.send(sendMessage)
   }
 }
