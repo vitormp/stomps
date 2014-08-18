@@ -30,9 +30,6 @@ class STOMPClient(serverHost : String = "127.0.0.1", serverPort : Integer = 6161
 //    while (true){
       val messageReceived = receiver.readLine
       System.out.println(messageReceived)
-      if (messageReceived == "\000") {
-        break;
-      }
 //    }
 
   }
