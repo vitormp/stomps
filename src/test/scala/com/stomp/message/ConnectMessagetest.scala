@@ -8,6 +8,6 @@ import com.stomp.test.core.UnitSpec
 class ConnectMessagetest extends UnitSpec {
 
   "A Connect Message" should "contains only the command and endOfMessage part" in {
-    assert("CONNECT\n\n\000" equals new Connect().build)
+    assert("CONNECT\n\n\000" equals Connect().build)
   }
 }
