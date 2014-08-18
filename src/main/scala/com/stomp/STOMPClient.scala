@@ -1,6 +1,6 @@
 package com.stomp
 
-import java.io.{OutputStream, PrintWriter}
+import java.io.{InputStreamReader, BufferedReader, OutputStream, PrintWriter}
 import java.net.Socket
 
 import com.stomp.message.{Connect, STOMPMessage}
@@ -10,9 +10,10 @@ import com.stomp.message.{Connect, STOMPMessage}
  */
 class STOMPClient(serverHost : String = "127.0.0.1", serverPort : Integer = 61613) {
 
+  val STOMPServer = new Socket(serverHost, serverPort)
+
   def connect() = {
-    val server = new Socket(serverHost, serverPort)
-    val client = server.getOutputStream()
+    val client = STOMPServer.getOutputStream()
     val connectMessage = Connect()
     System.out.println(connectMessage.build.getBytes("US-ASCII"))
     client.write(connectMessage.build.getBytes("US-ASCII"))
@@ -20,13 +21,19 @@ class STOMPClient(serverHost : String = "127.0.0.1", serverPort : Integer = 6161
   }
 
   def send(message : STOMPMessage) = {
-    val server = new Socket(serverHost, serverPort)
-    val client = server.getOutputStream()
+    val client = STOMPServer.getOutputStream
+    val receiver = new BufferedReader(new InputStreamReader(STOMPServer.getInputStream, "US-ASCII"))
     val connectMessage = Connect().build
-    System.out.println(connectMessage)
-    System.out.println(message.build)
     client.write(connectMessage.getBytes("US-ASCII"))
-    System.out.println(message.build.getBytes("US-ASCII"))
     client.write(message.build.getBytes("US-ASCII"))
+
+//    while (true){
+      val messageReceived = receiver.readLine
+      System.out.println(messageReceived)
+      if (messageReceived == "\000") {
+        break;
+      }
+//    }
+
   }
 }
