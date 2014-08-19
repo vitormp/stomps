@@ -25,10 +25,10 @@ class STOMPClientTest extends UnitSpec {
 ////    new STOMPClient("127.0.0.1", 61613).connect();
 //  }
 
-//  "A Client" should "send a message to a queue successfuly" in {
-//    val sendMessage : Send = Send("Message body")()
-//    val client = new STOMPClient()
-//    client.connect()
-//    client.send(sendMessage)
-//  }
+  "A Client" should "send a message to a queue successfuly" in {
+    val sendMessage : Send = Send("Message body")()
+    val client = new STOMPClient()
+    client.connect()
+    client.send(sendMessage)
+  }
 }

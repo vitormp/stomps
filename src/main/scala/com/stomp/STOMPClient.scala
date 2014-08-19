@@ -22,15 +22,13 @@ class STOMPClient(serverHost : String = "127.0.0.1", serverPort : Integer = 6161
 
   def send(message : STOMPMessage) = {
     val client = STOMPServer.getOutputStream
-    val receiver = new BufferedReader(new InputStreamReader(STOMPServer.getInputStream, "US-ASCII"))
     val connectMessage = Connect().build
-    client.write(connectMessage.getBytes("US-ASCII"))
+//    client.write(connectMessage.getBytes("US-ASCII"))
     client.write(message.build.getBytes("US-ASCII"))
+  }
 
-//    while (true){
-      val messageReceived = receiver.readLine
-      System.out.println(messageReceived)
-//    }
-
+  def receive = {
+    val receiver = new BufferedReader(new InputStreamReader(STOMPServer.getInputStream, "US-ASCII"))
+    receiver.readLine()
   }
 }
